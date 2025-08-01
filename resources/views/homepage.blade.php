@@ -6,6 +6,7 @@
     <title>Sabatani</title>
 </head>
 <body>
+    <div id="App"></div>
     @viteReactRefresh
     @vite('resources\js\app.js')
 </body>
