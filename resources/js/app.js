@@ -1,3 +1,7 @@
 import './bootstrap';
-import './components/HelloReact';
-// require('./components/helloReact');
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();
