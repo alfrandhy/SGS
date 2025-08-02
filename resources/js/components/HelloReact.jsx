@@ -10,7 +10,7 @@ import Page from './Page';
 
 function MyApp(){
     return(
-        <BrowserRouter basename="/erpsgs/public/">
+        <BrowserRouter basename="/public/">
             <h1>Hello World!</h1>
             <nav>
                 <ul>
