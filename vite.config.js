@@ -5,14 +5,14 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
     server: {
         cors: {
-            origin: ['http://10.100.0.254', 'http://10.100.0.254:5173'],
+            origin: ['http://10.100.0.254'],
         },
-        host: '0.0.0.0', // if needed, to listen on all network interfaces
-        hmr: {
-            host: '10.100.0.254', // client connects here instead of 0.0.0.0
-            port: 5173,
-        },
-        port: 5173,
+        host: '10.100.0.254', // if needed, to listen on all network interfaces
+        // hmr: {
+        //     host: '10.100.0.254', // client connects here instead of 0.0.0.0
+        //     port: 5173,
+        // },
+        // port: 5173,
     },
     plugins: [
         tailwindcss(),
