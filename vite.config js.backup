@@ -7,7 +7,7 @@ export default defineConfig({
         cors: {
             origin: ['http://10.100.0.254', 'http://10.100.0.254:5173'],
         },
-        host: '0.0.0.0', // if needed, to listen on all network interfaces
+    //     host: '0.0.0.0', // if needed, to listen on all network interfaces
         hmr: {
             host: '10.100.0.254', // client connects here instead of 0.0.0.0
             port: 5173,
