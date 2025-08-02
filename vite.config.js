@@ -2,6 +2,17 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
+    // server: {
+    //     cors: {
+    //         origin: ['http://sabatani.local'],
+    //     },
+    //     host: '0.0.0.0', // if needed, to listen on all network interfaces
+    //     hmr: {
+    //         host: '10.100.0.254', // client connects here instead of 0.0.0.0
+    //         port: 5173,
+    //     },
+    //     port: 5173,
+    // },
     plugins: [
         laravel({
             input: [
