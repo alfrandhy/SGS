@@ -10,7 +10,8 @@ import Page from './Page';
 
 function MyApp(){
     return(
-        <BrowserRouter basename="/public/">
+        // <BrowserRouter basename="/public/">
+        <BrowserRouter>
             <h1>Hello World!</h1>
             <nav>
                 <ul>
