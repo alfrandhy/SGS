@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::view('/SGS/{any?}', 'layouts/sgs')->where('any', '.*');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,3 +30,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
