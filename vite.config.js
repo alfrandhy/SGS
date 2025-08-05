@@ -7,7 +7,11 @@ export default defineConfig({
         cors: {
             origin: ['http://10.100.0.254'],
         },
-        host: '10.100.0.254'
+        host: '10.100.0.254',
+        port: 5173,
+        hmr: {
+            host: '10.100.0.254',
+        },
     },
     plugins: [
         tailwindcss(),
