@@ -1,0 +1,48 @@
+
+  GET|HEAD        / .....................................................................
+  POST            _ignition/execute-solution ignition.executeSolution › Spatie\LaravelIg…
+  GET|HEAD        _ignition/health-check ignition.healthCheck › Spatie\LaravelIgnition  …
+  POST            _ignition/update-config ignition.updateConfig › Spatie\LaravelIgnition…
+  GET|HEAD        api/boqs .......................................... BoqController@index
+  POST            api/boqs .......................................... BoqController@store
+  GET|HEAD        api/boqs/{partno} .................................. BoqController@show
+  PUT             api/boqs/{partno} ................................ BoqController@update
+  DELETE          api/boqs/{partno} ............................... BoqController@destroy
+  GET|HEAD        api/menus ...................... api.menus.index › MenuController@index
+  POST            api/menus ...................... api.menus.store › MenuController@store
+  PATCH           api/menus/{menu} ............. api.menus.update › MenuController@update
+  DELETE          api/menus/{menu} ........... api.menus.destroy › MenuController@destroy
+  GET|HEAD        api/user ..............................................................
+  GET|HEAD        confirm-password password.confirm › Auth\ConfirmablePasswordController…
+  POST            confirm-password ............. Auth\ConfirmablePasswordController@store
+  POST            email/verification-notification verification.send › Auth\EmailVerifica…
+  GET|HEAD        erp ............................................................... erp
+  GET|HEAD        erp/engineering ........................................... engineering
+  GET|HEAD        erp/engineering/boqs ................. boqs.index › BoqController@index
+  POST            erp/engineering/boqs ................. boqs.store › BoqController@store
+  GET|HEAD        erp/engineering/boqs/create ........ boqs.create › BoqController@create
+  GET|HEAD        erp/engineering/boqs/{boq} ............. boqs.show › BoqController@show
+  PUT|PATCH       erp/engineering/boqs/{boq} ......... boqs.update › BoqController@update
+  DELETE          erp/engineering/boqs/{boq} ....... boqs.destroy › BoqController@destroy
+  GET|HEAD        erp/engineering/boqs/{boq}/edit ........ boqs.edit › BoqController@edit
+  GET|HEAD        forgot-password password.request › Auth\PasswordResetLinkController@cr…
+  POST            forgot-password password.email › Auth\PasswordResetLinkController@store
+  GET|HEAD        login .............. login › Auth\AuthenticatedSessionController@create
+  POST            login ....................... Auth\AuthenticatedSessionController@store
+  POST            logout ........... logout › Auth\AuthenticatedSessionController@destroy
+  PUT             password ............. password.update › Auth\PasswordController@update
+  GET|HEAD        register .............. register › Auth\RegisteredUserController@create
+  POST            register .......................... Auth\RegisteredUserController@store
+  POST            reset-password ...... password.store › Auth\NewPasswordController@store
+  GET|HEAD        reset-password/{token} password.reset › Auth\NewPasswordController@cre…
+  GET|HEAD        sanctum/csrf-cookie sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookie…
+  GET|HEAD        sgshome ..................................................... dashboard
+  GET|HEAD        sgshome/menus ............................. menus › MenuController@data
+  GET|HEAD        sgshome/profile ................. profile.edit › ProfileController@edit
+  PATCH           sgshome/profile ............. profile.update › ProfileController@update
+  DELETE          sgshome/profile ........... profile.destroy › ProfileController@destroy
+  GET|HEAD        sgshome/users ............................ users › UserController@index
+  POST            sgshome/users ...................... users.store › UserController@store
+  GET|HEAD        verify-email verification.notice › Auth\EmailVerificationPromptControl…
+  GET|HEAD        verify-email/{id}/{hash} verification.verify › Auth\VerifyEmailControl…
+
