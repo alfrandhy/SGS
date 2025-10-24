@@ -11,7 +11,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="/src/mainpage/logo.png">
+        <link rel="icon" type="image/png" href="public/src/mainpage/logo.png">
 
         <!-- Styles -->
         @vite('resources/css/app.css')

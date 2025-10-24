@@ -6,11 +6,22 @@ export default defineConfig({
     server: {
         cors: true,
     },
+    // plugins: [
+    //     laravel({
+    //         input: 'resources/js/app.jsx',
+    //         refresh: true,
+    //     }),
+    //     react(),
+    // ],
     plugins: [
         laravel({
-            input: 'resources/js/app.jsx',
+            input: ['resources/css/app.css', 'resources/js/app.jsx'],
             refresh: true,
         }),
         react(),
     ],
+    build: {
+        outDir: 'public/build', // This is the default, but ensure it's not overridden
+    },
+
 });

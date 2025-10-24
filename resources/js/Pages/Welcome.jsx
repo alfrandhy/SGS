@@ -11,7 +11,7 @@ export default function Welcome({ auth }) {
                         <div className="flex justify-between items-center">
                             <div className="flex items-center space-x-2">
                                 <img
-                                    src="/src/mainpage/logo.png"
+                                    src="public/src/mainpage/logo.png"
                                     alt="PT. Sabatani Global Solusindo Logo"
                                     className="h-10 w-auto"
                                 />
@@ -267,7 +267,7 @@ export default function Welcome({ auth }) {
                             <div>
                                 <div className="flex items-center space-x-2 mb-4">
                                     <img
-                                        src="/src/mainpage/logo.png"
+                                        src="public/src/mainpage/logo.png"
                                         alt="PT. Sabatani Global Solusindo Logo"
                                         className="h-8 w-auto"
                                     />
