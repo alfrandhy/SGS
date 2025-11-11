@@ -108,13 +108,11 @@ class ProjectListController extends Controller
     public function edit(ProjectList $projectList)
     {
         $customers = Customer::select('code', 'name')->orderBy('name')->get();
-        $projectCount = ProjectList::count();
 
         return Inertia::render('ProjectLists/Form', [
             'projectList' => $projectList,
             'customers' => $customers,
-            'mode' => 'edit',
-            'projectCount' => $projectCount
+            'mode' => 'edit'
         ]);
     }
 

@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         return Inertia::render('Users/Index', [
-            'users' => User::all(),
+            'users' => User::paginate(10),
         ]);
     }
 
@@ -24,16 +24,14 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
         ]);
+
         try {
-            // User::create([
-            //     'name' => $validatedData['name'],
-            //     'email' => $validatedData['email'],
-            //     'password' => $validatedData['password'], 
-            // ]);
+            $validatedData['password'] = bcrypt($validatedData['password']);
             User::create($validatedData);
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'User could not be created.']);
         }
-        return redirect()->route('users')->with('success', 'User  created successfully.');
+
+        return redirect()->route('users.index')->with('success', 'User created successfully.');
     }
 }

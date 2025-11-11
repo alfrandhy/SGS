@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Routing\Controller;
 use App\Models\Menu;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -119,6 +118,9 @@ class MenuController extends Controller
             $data['icon'] = Storage::url($path);
         }
 
+        $data['created_by'] = auth()->id();
+        $data['updated_by'] = auth()->id();
+
         $menu = Menu::create($data);
 
         return response()->json([
@@ -177,10 +179,12 @@ class MenuController extends Controller
                 $oldPath = str_replace('/storage', 'public', $menu->icon);
                 Storage::delete($oldPath);
             }
-            
+
             $path = $request->file('icon')->store('public/menu-icons');
             $data['icon'] = Storage::url($path);
         }
+
+        $data['updated_by'] = auth()->id();
 
         $menu->update($data);
 

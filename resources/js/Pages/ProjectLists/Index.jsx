@@ -48,15 +48,9 @@ export default function Index({ auth, projectLists, filters, groupedByYear }) {
                         <div className="mt-2">
                             <Breadcrumb
                                 items={[
-                                    {
-                                        label: "ERP",
-                                        href: route("erp"),
-                                    },
-                                    {
-                                        label: "Engineering",
-                                        href: route("engineering"),
-                                    },
-                                    { label: "Project List" },
+                                    { label: 'ERP', href: route('erp') },
+                                    { label: 'Marketing', href: route('marketing') },
+                                    { label: 'Project List' }
                                 ]}
                             />
                         </div>

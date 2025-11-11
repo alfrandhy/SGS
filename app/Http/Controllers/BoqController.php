@@ -70,18 +70,17 @@ class BoqController extends Controller
     public function store(BoqRequest $request)
     {
         try {
-            Boq::create([
-            ...$request->validated(),
-            'created_by' => auth()->id(),
-            'updated_by' => auth()->id(),
-        ]);
+            $validated = $request->validated();
+            $validated['boqcode'] = $validated['projectcode'] . '-' . $validated['partno'];
+            $validated['created_by'] = auth()->id();
+            $validated['updated_by'] = auth()->id();
 
-        return redirect()->route('boqs.index')->with('success', 'Boq created successfully.');
+            Boq::create($validated);
 
+            return redirect()->route('boqs.index')->with('success', 'Boq created successfully.');
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'Boq could not be created.']);
         }
-
     }
 
     public function show(Boq $boq)
@@ -96,15 +95,17 @@ class BoqController extends Controller
 
     public function update(BoqRequest $request, Boq $boq)
     {
-        $boqcode = $request->projectcode . '-' . $request->partno;
+        try {
+            $validated = $request->validated();
+            $validated['boqcode'] = $validated['projectcode'] . '-' . $validated['partno'];
+            $validated['updated_by'] = auth()->id();
 
-        $boq->update([
-            'boqcode' => $boqcode,
-            ...$request->validated(),
-            'updated_by' => auth()->id(),
-        ]);
+            $boq->update($validated);
 
-        return redirect()->route('boqs.index');
+            return redirect()->route('boqs.index')->with('success', 'Boq updated successfully.');
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => 'Boq could not be updated.']);
+        }
     }
 
     public function destroy(Boq $boq)
